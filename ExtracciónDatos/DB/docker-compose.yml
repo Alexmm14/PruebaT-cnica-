@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  postgres-db:
+    image: postgres
+    container_name: postgres-container
+    environment:
+      POSTGRES_DB: laravel
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "Admin2024#"
+    restart: always
+    networks:
+      mi_red:
+        ipv4_address: 172.30.0.3
+
+networks:
+  mi_red:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16
+
